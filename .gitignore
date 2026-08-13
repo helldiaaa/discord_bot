@@ -1,0 +1,8 @@
+.env
+*.env
+node_modules/
+*.db
+*.sqlite
+logs/
+*.log
+config.json

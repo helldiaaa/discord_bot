@@ -1,0 +1,23 @@
+name: Auto Deploy to N100
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Copy updated code to bot directory
+        run: |
+          cp -r ./* ~/discordbot/HGAME/
+
+      - name: Install dependencies & Reload PM2
+        run: |
+          cd ~/discordbot/HGAME
+          npm install
+          pm2 reload all

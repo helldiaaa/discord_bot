@@ -14,7 +14,7 @@ jobs:
 
       - name: Copy updated code to bot directory
         run: |
-          cp -r ./* ~/discordbot/HGAME/
+          cp -r ./* ~/discordbot/Desktop/
 
       - name: Install dependencies & Reload PM2
         run: |
